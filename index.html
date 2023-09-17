@@ -106,5 +106,31 @@
   </div>
 <!--            -->
   <!-- 添加更多音乐播放器 -->
+
+<button id="loopButton">切换循环</button> <!--添加一个用于控制循环的按钮  -->
+  
+  <script>
+  // 获取音频元素的引用
+  const audioElement = document.querySelector('audio');
+
+  // 获取循环按钮的引用
+  const loopButton = document.querySelector('#loopButton');
+
+  // 初始化一个变量来跟踪循环状态
+  let isLooping = false;
+
+  // 添加一个点击事件监听器到循环按钮
+  loopButton.addEventListener('click', () => {
+    // 切换循环状态
+    isLooping = !isLooping;
+
+    // 设置音频元素的循环属性
+    audioElement.loop = isLooping;
+
+    // 更改按钮文本以反映当前循环状态
+    loopButton.textContent = isLooping ? '循环已开启' : '循环已关闭';
+  });
+</script>
+  
 </body>
 </html>
